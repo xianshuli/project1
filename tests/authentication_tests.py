@@ -13,6 +13,6 @@ class StandAloneTests(TestCase):
         """Test the login function when things go right."""
         mock_open.return_value.read.return_value = \
             "george|bosco"
-        self.assertFalse(auth.login('george', 'bosco'))
+        self.assertTrue(auth.login('george', 'bosco'))
 
     
