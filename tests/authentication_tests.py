@@ -3,7 +3,7 @@
 
 from unittest import TestCase
 from mock import patch
-import project1.authentication as auth
+import project1.authentication as Experiment
 
 class MyTestCase(unittest.TestCase):
 
