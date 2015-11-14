@@ -5,14 +5,32 @@ from unittest import TestCase
 from mock import patch
 import project1.authentication as auth
 
-class StandAloneTests(TestCase):
-    """Test the stand-alone module functions."""
+class MyTestCase(unittest.TestCase):
 
-    @patch('__builtin__.open')
-    def test_login_success(self, mock_open):
-        """Test the login function when things go right."""
-        mock_open.return_value.read.return_value = \
-            "george|bosco"
-        self.assertTrue(auth.login('george', 'bosco'))
+  def test_t1(self):
+    r1 = Experiment.largest([1,1,1]) 
+    self.assertEqual(r1, 1)
 
+  def test_t2(self):
+    r1 = Experiment.largest([3,2,1]) 
+    self.assertEqual(r1, 3)
+
+  def test_t3(self):
+    r1 = Experiment.largest([3,2,3]) 
+    self.assertEqual(r1, 3)
+
+  def test_t4(self):
+    r1 = Experiment.largest([3,2,3,4]) 
+    self.assertEqual(r1, 4)
+
+  def test_t5(self):
+    r1 = Experiment.largest([3,-2,3,-1,4]) 
+    self.assertEqual(r1, 4)
+
+  def test_t6(self):
+    r1 = Experiment.largest([-3,-2,-3,-1,-4]) 
+    self.assertEqual(r1, -1)
+
+  def test_t7(self):
+    self.assertRaises(ValueError, Experiment.largest, [])
     
