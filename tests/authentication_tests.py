@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Unit tests for the project1.authentication module."""
 
-from unittest import TestCase
+import unittest
 from mock import patch
 import project1.authentication as Experiment
 
